@@ -11,6 +11,8 @@ const Header = () => {
     const [DarkMode, setDarkMode] = useState(false)
     const [menuBar, setmenuBar] = useState(false)
 
+    console.log(menuBar)
+
     //menubar animation
 
 
@@ -23,7 +25,7 @@ const Header = () => {
         return () => {
             Events.scrollEvent.remove('begin');
         };
-    }, );
+    },);
 
     //set dark class to html 
     const dark = () => {
@@ -50,12 +52,15 @@ const Header = () => {
                     </div>
                     <div className='right flex items-center justify-center gap-5 '>
                         <div className='flex items-center gap-10 '>
-                            <div className="darkMode cursor-pointer" onClick={() => {SetDarkTheme()}}>
+                            <div className="darkMode cursor-pointer" onClick={() => { SetDarkTheme() }}>
                                 {DarkMode ? <MdSunny size={"22px"} /> : <FaMoon size={"22px"} />}
                             </div>
-                            <div className="md:hidden cursor-pointer" onClick={() => { setmenuBar(!menuBar) }}><IoMdMenu /></div>
+                            <div className="md:hidden cursor-pointer" tabIndex="0" onBlur={() => {
+                                setmenuBar(false)
+
+                            }} onClick={() => { setmenuBar(!menuBar) }}><IoMdMenu /></div>
                         </div>
-                        <ul  className={`md:flex md:gap-5 text-xl  transition ease-in-out delay-300 duration-[0.4s] ${menuBar?"flex flex-col gap-2 items-center absolute left-0 w-full py-3 top-14  bg-primary-light dark:bg-primary-dark z-10":"hidden"}`}>
+                        <ul className={`md:flex md:gap-5 text-xl  transition ease-in-out delay-300 duration-[0.4s] ${menuBar ? "flex flex-col gap-2 items-center absolute  w-52 right-3 py-3 top-14  bg-primary-light dark:bg-primary-dark z-10" : "hidden"}`}>
                             {
                                 content.map((value, index) => {
                                     return (<li key={index}> <Link to={value}
@@ -66,8 +71,8 @@ const Header = () => {
                                         onSetActive={(to) => { setActiveLink(to) }}
                                         activeClass="text-secondary"
                                         className='hover:underline cursor-pointer'
-                                        >{value}</Link></li>
-                                    
+                                    >{value}</Link></li>
+
                                     )
                                 })
                             }

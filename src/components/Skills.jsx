@@ -9,6 +9,7 @@ import { BiLogoNodejs } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import ScrollAnimation from 'react-animate-on-scroll';
 import { motion, useInView } from "framer-motion"
 
@@ -53,6 +54,12 @@ const Skill = [
     name: "MongoDB",
     icon: <SiMongodb size={"70px"} />,
     color: "text-green-800"
+  },
+  {
+    name: "Nextjs",
+    icon: <TbBrandNextjs size={"70px"} />,
+    color:"text-black dark:text-white"
+
   },
   {
     name: "Git",

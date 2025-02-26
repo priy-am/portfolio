@@ -34,8 +34,8 @@ const First = () => {
                     <motion.div ref={ref} initial="hidden"
                         animate={control}
                         variants={Variants} className="content md:block flex flex-col justify-center items-center ">
-                        <div className="greeting text-secondary font-bold. text-xl flex items-center gap-1">Namste <span className='text-yellow-600'><PiHandsPrayingFill /></span> everyone</div>
-                        <div className={`mySelf font-bold text-center md:text-start md:text-6xl md:m-0 my-2 text-5xl text-primary-dark dark:text-primary-light`}>My Self PIRYAM</div>
+                        <div className="greeting text-secondary font-bold. text-xl flex items-center gap-1">Namaste <span className='text-yellow-600'><PiHandsPrayingFill /></span> everyone</div>
+                        <div className={`mySelf font-bold text-center md:text-start md:text-6xl md:m-0 my-2 text-5xl text-primary-dark dark:text-primary-light`}>My Self PRIYAM</div>
                         <div className="text-4xl font-bold mt-3 ">
                             <span className={`text-primary-dark dark:text-primary-light`}>I am  {""}
                                 <span className='text-[#5df0a1] '>
